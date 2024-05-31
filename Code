@@ -1,0 +1,95 @@
+#include <iostream>
+#include <vector>
+#include <string>
+#include <fstream>
+using namespace std;
+
+
+vector<string> courseCodes;
+vector<string> courseNames;
+
+void viewSchedule(string courseCodes, string courseNames) {
+
+}
+
+void addClass (string courseCodes, string courseNames) {
+
+}
+
+void removeClass(string courseCodes, string courseNames) {
+
+}
+int main()
+{
+while(1) {
+cout << "Welcome to your class sceduele! Please choose an option: " << endl;
+// displays menu
+    int input;
+cout << "Menu: " << endl;
+cout << "0. Exit" << endl;
+cout << "1. View Schedule" << endl;
+cout << "2. Add Class" << endl;
+cout << "3. Remove Class" << endl;
+
+cout << "Enter choice: ";
+cin >> input;
+
+if (input < 4 && input > -1)
+{
+
+if (input == 0) {
+    cout << "See ya!" << endl;
+break;
+}
+else if (input == 1) {
+    if (courseCodes.empty()) {
+        cout << "No classes detected!" << endl;
+    } else {
+    }
+    for (int i = 0; i < courseCodes.size(); i++) {
+        cout << "#" << courseCodes[i] << ", " << courseNames[i] << endl;
+    }
+}
+  else if (input == 2) {
+    cout << "Please enter the course number: " << endl;
+    string newCode;
+    cin >> newCode;
+     courseCodes.insert(courseCodes.begin(),newCode);
+    int test;
+    test = newCode.size();
+    if (test == 4) {
+    cout << "Please enter the course name: " << endl;
+    string newClass;
+    cin >> newClass;
+    courseNames.insert(courseNames.begin(),newClass);
+    cout << "#" << courseCodes[0] << ", " << courseNames[0] << endl; }
+    else {
+        cout << "The code must be four digits long!" << endl;
+    }
+   }
+else if (input == 3)
+    if (courseCodes.empty()) {
+        cout << "No classes detected!" << endl;
+    } else {
+            for (int i = 0; i < courseCodes.size(); i++) {
+                cout << "#" << courseCodes[i] << ", " << courseNames[i] << endl;
+                cout << "Please choose a class to remove (input starts at 0): " << endl;
+                   int kill;
+                   cin >> kill;
+                   int number;
+                   number = courseCodes.size();
+                   if (kill < number) {
+                       courseCodes.erase(courseCodes.begin()+kill);  }
+                       else {
+                    cout << "Nothing was deleted!" << endl; }
+
+
+}
+        }
+    }
+else {
+    cout << input << " is not an option, try again!" << endl;
+}
+
+}
+}
